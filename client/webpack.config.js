@@ -20,7 +20,7 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'pwa_text_editor'
+        title: 'JATE'
       }),
 
       new InjectManifest({
@@ -31,14 +31,15 @@ module.exports = () => {
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
-        name: 'PWA Text Editor',
-        short_name: 'Text',
+        name: 'JAsons Text Editor',
+        short_name: 'JATE',
         description: 'Write your code down on the go',
         start_url: './',
         publicPath: './',
         icons: [{
             src: path.resolve('src/images/logo.png'),
-            destination: path.joing('assets', 'icons'),
+            sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join('assets', 'icons'),
           },
         ],
       }),

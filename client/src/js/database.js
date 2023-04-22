@@ -16,28 +16,27 @@ const initdb = async () =>
 export const putDb = async (content) => { 
   console.log('PUT to the database');
   
-  const contactDB = await openDB('contact', 1);
-  const tx = contactDB.transaction('contact', 'readwrite');
-  const store = tx.objectStore('contact');
-  const request = store.add({ content: content});
+  const contactDB = await openDB('jate', 1);
+  const tx = contactDB.transaction('jate', 'readwrite');
+  const store = tx.objectStore('jate');
+  const request = store.put({ id: 1, value: content });
   const result = await request;
 
-  console.log('data saved to the database', result);
-  console.error('putDb not implemented');
+  console.log('data saved to database', result);
 }
 
 // TODO: Add logic for a method that gets all the content from the database
 export const getDb = async () => { 
   console.log('GET the database');
   
-  const contactDB = await openDB('contact', 1);
-  const tx = contactDB.transaction('contact', 'readonly');
-  const store = tx.objectStore('contact');
+  const contactDB = await openDB('jate', 1);
+  const tx = contactDB.transaction('jate', 'readonly');
+  const store = tx.objectStore('jate');
   const request = store.getAll();
   const result = await request;
 
   console.log('data displayed from the database', result);
-  console.error('getDb not implemented');
+  return result?.value;
 }
 
 initdb();

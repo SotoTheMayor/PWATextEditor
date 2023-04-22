@@ -22,9 +22,9 @@ Install button located on the nav bar!  Nothing further needed.
 ## Usage
 Project is intended to provide a notepad for writing down code on the go, even if you don't have a connection to the internet.  It stores your draft locally and updates the server once reconnected.
 
-[text displayed](https://**urlhere**)
+[server location for the application](https://**urlhere**)
 
-![description of image](./**img_path**)
+![screenshot of functioning app](./Assets/Screenshot%20of%20JATE.png)
 
 ## License
 
